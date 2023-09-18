@@ -15,11 +15,10 @@ export default {
 
 <template>
     <main>
-        <!-- film list -->
+        
+        <!-- list -->
         <cardList />
         
-        <!-- TV Series list -->
-        <cardList />
     </main>
 </template>
 

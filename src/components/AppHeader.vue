@@ -1,11 +1,19 @@
 <script>
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 // import MyComponent from "./components/MyComponent.vue";
 
 export default {
   data() {
     return {
       title: "boolflix",
+      serchedQuery: ""
     };
+  },
+  methods:{
+    search(){
+        this.$emit("search", this.serchedQuery)
+    }
   },
 
   // components: {
@@ -23,6 +31,7 @@ export default {
 
         <div class="input-group w-50">
           <input
+            v-model="serchedQuery"
             type="text"
             class="form-control"
             placeholder="Search for films or TV Series"
@@ -33,6 +42,7 @@ export default {
             class="btn btn-outline-danger"
             type="button"
             id="button-searchBar"
+            @click="search()"
           >
             <!-- todo fa icon -->
             Search
