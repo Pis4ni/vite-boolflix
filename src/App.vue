@@ -26,10 +26,13 @@ export default {
             const id = movie.id
             const title = movie.title
             const original_title = movie.original_title
-            const original_language = movie.original_language
+            let original_language = movie.original_language
             const vote_average = movie.vote_average
             const poster = movie.poster_path
-            const country = movie.origin_country[0].toLowerCase()
+
+            original_language = (original_language == 'en') ? 'gb' : original_language;
+            original_language = (original_language == 'ja') ? 'jp' : original_language;
+
 
             return{
               id,
@@ -38,7 +41,7 @@ export default {
               language:original_language,
               vote: vote_average,
               poster: poster,
-              country:country
+
 
             }
 
@@ -63,10 +66,10 @@ export default {
             const original_language = tvSerie.original_language
             const vote_average = tvSerie.vote_average
             const poster = tvSerie.poster_path
-            const country = tvSerie.origin_country[0].toLowerCase()
-            console.log(country);
-            
 
+            original_language = (original_language == 'en') ? 'gb' : original_language;
+            original_language = (original_language == 'ja') ? 'jp' : original_language;
+            
 
             return{
               id,
@@ -75,7 +78,6 @@ export default {
               language:original_language,
               vote: vote_average,
               poster: poster,
-              country:country
 
             }
 

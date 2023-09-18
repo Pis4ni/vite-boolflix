@@ -23,8 +23,13 @@ export default {
 
     <span>{{ card.name }}</span>
     <span>{{ card.original_title }}</span>
-    <span>{{ card.language }}</span>
-    <span :class="'fi fi-'+ card.country"></span>
+    <div class="languages-flags d-flex align-items-center">
+      <span class="me-2">{{ card.language }}</span>
+      <span :class="'fi fi-'+ card.language"></span>
+      <span v-if="card.language == 'gb'" class="m-2">/</span>
+      <span  v-if="card.language == 'gb'" class="fi fi-us ms-1"></span>
+    </div>
+
     <span class="fi fi-"></span>
     <span>{{ card.vote }}</span>
     <span>{{ card.id }}</span>
