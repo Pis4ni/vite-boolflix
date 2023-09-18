@@ -24,7 +24,8 @@ export default {
 
 <style lang="scss" scoped>
     main{
-        height: calc(100vh - 86px);
+        overflow: auto;
+        height: calc(100vh - 88px);
         background-color: #343434;
     }
 </style>

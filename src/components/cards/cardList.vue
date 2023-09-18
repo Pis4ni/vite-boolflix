@@ -16,27 +16,35 @@ export default {
 </script>
 
 <template>
+    <main>
 
-  <div class="container">
-        <div class="d-flex slider">
-
-          <!-- film -->
-          <cardDetail v-for="card in store.films" key="card.id" :card="card" />
-          
+        <div class="container">
+          <h2 v-if="store.films.length !== 0">Film</h2>
+          <div class="d-flex slider">
+              
+            <!-- film -->
+            <cardDetail v-for="card in store.films" key="card.id" :card="card" />
+              
+          </div>
+          <h2 v-if="store.series.length !== 0">TV Series</h2>
+          <div class="d-flex slider">
+      
+             <!-- series -->
+             <cardDetail v-for="card in store.series" key="card.id" :card="card" />
+          </div>
         </div>
-        <div class="d-flex slider">
+    </main>
 
-            <!-- series -->
-            <cardDetail v-for="card in store.series" key="card.id" :card="card" />
-        </div>
-  </div>
   
   
 </template>
 
 <style lang="scss" scoped>
-.slider{
-    max-width: 100%;
-    overflow-x:auto ;
+main{
+    color: #f9f9f9;
+    .slider{
+        max-width: 100%;
+        overflow-x:auto ;
+    }
 }
 </style>

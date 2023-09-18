@@ -28,7 +28,9 @@ export default {
             const original_title = movie.original_title
             let original_language = movie.original_language
             const vote_average = movie.vote_average
-            const poster = movie.poster_path
+            const starVote = Math.round((movie.vote_average /2 )) 
+
+            const poster = 'https://image.tmdb.org/t/p/w342' + movie.poster_path
 
             original_language = (original_language == 'en') ? 'gb' : original_language;
             original_language = (original_language == 'ja') ? 'jp' : original_language;
@@ -41,7 +43,7 @@ export default {
               language:original_language,
               vote: vote_average,
               poster: poster,
-
+              starVote:starVote
 
             }
 
@@ -63,9 +65,10 @@ export default {
             const id = tvSerie.id
             const title = tvSerie.name
             const original_title = tvSerie.original_name
-            const original_language = tvSerie.original_language
+            let original_language = tvSerie.original_language
             const vote_average = tvSerie.vote_average
-            const poster = tvSerie.poster_path
+            const starVote = Math.round((tvSerie.vote_average /2 )) 
+            const poster = 'https://image.tmdb.org/t/p/w342' + tvSerie.poster_path
 
             original_language = (original_language == 'en') ? 'gb' : original_language;
             original_language = (original_language == 'ja') ? 'jp' : original_language;
@@ -78,6 +81,7 @@ export default {
               language:original_language,
               vote: vote_average,
               poster: poster,
+              starVote:starVote
 
             }
 
